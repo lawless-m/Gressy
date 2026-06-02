@@ -25,7 +25,25 @@ cgi-bin/
 lighttpd/
   05-auth.conf       Loads mod_auth / mod_authn_file (before mod_cgi)
   50-visitorlog.conf Routes /check-in /check-out /admin to the CGI scripts; Basic Auth on /admin
+print/
+  check-in.svg       QR code for https://miami.ram-int.uk/check-in
+  check-out.svg      QR code for https://miami.ram-int.uk/check-out
+  print.html         Two A4 sheets (check-in + check-out) ready to print
 deploy.sh        Installs everything onto the host and reloads lighttpd
+```
+
+## Printable QR sheets
+
+`print/print.html` is two A4 portrait pages — a check-in sheet and a check-out
+sheet — each with its QR code and the URL printed underneath. Open it in a
+browser and print (Ctrl/Cmd-P, paper size **A4**, margins **None/Default**); the
+`@page` rules size each sheet to A4 and force a page break between them. The QR
+images are the vector `.svg` files in the same folder, so they stay crisp at any
+size. Regenerate them with:
+
+```sh
+qrencode -t SVG -l M -m 0 -o print/check-in.svg  "https://miami.ram-int.uk/check-in"
+qrencode -t SVG -l M -m 0 -o print/check-out.svg "https://miami.ram-int.uk/check-out"
 ```
 
 ## Database

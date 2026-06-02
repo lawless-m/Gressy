@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ramsden International — Visitor QR Sheets</title>
+<style>
+    @page { size: A4 portrait; margin: 0; }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: #1a1a2e;
+        background: #fff;
+    }
+
+    .sheet {
+        width: 210mm;
+        height: 297mm;
+        padding: 25mm 20mm;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        page-break-after: always;
+    }
+    .sheet:last-child { page-break-after: auto; }
+
+    .brand {
+        font-size: 28pt;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        margin-bottom: 4mm;
+    }
+    .rule {
+        width: 60mm;
+        height: 3px;
+        background: #2a5298;
+        margin-bottom: 14mm;
+    }
+    .action {
+        font-size: 40pt;
+        font-weight: 800;
+        margin-bottom: 6mm;
+    }
+    .instruction {
+        font-size: 16pt;
+        color: #444;
+        margin-bottom: 14mm;
+        max-width: 150mm;
+        line-height: 1.5;
+    }
+    .qr {
+        width: 110mm;
+        height: 110mm;
+        image-rendering: pixelated;   /* crisp module edges */
+    }
+    .scan {
+        font-size: 13pt;
+        color: #666;
+        margin-top: 8mm;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+    .url {
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+        font-size: 18pt;
+        font-weight: 600;
+        color: #1a1a2e;
+        margin-top: 3mm;
+        word-break: break-all;
+    }
+    .footer {
+        margin-top: auto;
+        font-size: 9pt;
+        color: #999;
+        line-height: 1.6;
+    }
+</style>
+</head>
+<body>
+
+    <section class="sheet">
+        <div class="brand">Ramsden International</div>
+        <div class="rule"></div>
+        <div class="action">Visitor Check-In</div>
+        <p class="instruction">Welcome. Please scan the code below to sign in,
+           then enter your name and company.</p>
+        <img class="qr" src="./check-in.svg" alt="QR code for the visitor check-in page">
+        <div class="scan">Scan to check in</div>
+        <div class="url">miami.ram-int.uk/check-in</div>
+        <div class="footer">
+            Ramsden International is a trading name of S D Ramsden &amp; Co Limited.<br>
+            Registered in England and Wales. Company Registration No. 07902211
+        </div>
+    </section>
+
+    <section class="sheet">
+        <div class="brand">Ramsden International</div>
+        <div class="rule"></div>
+        <div class="action">Visitor Check-Out</div>
+        <p class="instruction">Leaving the building? Please scan the code below
+           to sign out. Thank you for visiting.</p>
+        <img class="qr" src="./check-out.svg" alt="QR code for the visitor check-out page">
+        <div class="scan">Scan to check out</div>
+        <div class="url">miami.ram-int.uk/check-out</div>
+        <div class="footer">
+            Ramsden International is a trading name of S D Ramsden &amp; Co Limited.<br>
+            Registered in England and Wales. Company Registration No. 07902211
+        </div>
+    </section>
+
+</body>
+</html>
