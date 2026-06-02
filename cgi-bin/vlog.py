@@ -207,7 +207,8 @@ def page(card_html, title="Ramsden International", max_width="480px"):
     <footer style="text-align:center;padding:1.5rem;font-size:0.85rem;background:#1a1a2e;color:#aaa;line-height:1.8;">
         &copy; 2026 Ramsden International. All rights reserved.<br>
         Ramsden International is a trading name of S D Ramsden &amp; Co Limited.<br>
-        Registered in England and Wales. Company Registration No. 07902211
+        Registered in England and Wales. Company Registration No. 07902211.<br>
+        Registered office: Adam Smith Street, Grimsby DN31 1SJ, United Kingdom.
     </footer>
 </body>
 </html>"""
