@@ -1,0 +1,5 @@
+# Secrets and runtime state — never commit these
+visitorlog.htpasswd
+*.db
+__pycache__/
+*.pyc
