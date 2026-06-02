@@ -8,6 +8,7 @@
 set -euo pipefail
 
 CGI_DIR=/var/www/cgi-bin
+WEB_DIR=/var/www/html
 DB_DIR=/var/lib/visitorlog
 CONF_AVAIL=/etc/lighttpd/conf-available
 CONF_ENABLED=/etc/lighttpd/conf-enabled
@@ -29,6 +30,12 @@ install -m 0755 "$REPO/cgi-bin/admin.py"    "$CGI_DIR/admin.py"
 
 echo "==> Creating database directory $DB_DIR (owned by www-data)"
 install -d -o www-data -g www-data -m 0755 "$DB_DIR"
+
+echo "==> Installing printable QR sheets to $WEB_DIR/print"
+install -d -m 0755 "$WEB_DIR/print"
+install -m 0644 "$REPO/print/print.html"    "$WEB_DIR/print/print.html"
+install -m 0644 "$REPO/print/check-in.svg"  "$WEB_DIR/print/check-in.svg"
+install -m 0644 "$REPO/print/check-out.svg" "$WEB_DIR/print/check-out.svg"
 
 echo "==> Installing lighttpd configuration"
 install -m 0644 "$REPO/lighttpd/05-auth.conf"       "$CONF_AVAIL/05-auth.conf"
